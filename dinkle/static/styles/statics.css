@@ -1,0 +1,98 @@
+main.statics div.container {
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+}
+main.statics div.container div.colc {
+  padding: 0;
+}
+main.statics div.container div.colc div.up div.title {
+  font-size: 3.5vmin;
+  width: 50%;
+  padding: 2vmin;
+  display: flex;
+  align-items: center;
+  padding-left: 15%;
+  padding-right: 0;
+}
+main.statics div.container div.colc div.up div.row {
+  width: 100%;
+  padding: 0;
+}
+main.statics div.container div.colc div.up div.row div.col1 {
+  width: 50%;
+}
+main.statics div.container div.colc div.up div.row div.col1 img {
+  float: right;
+  width: 65%;
+  border-radius: 5%;
+}
+main.statics div.container div.colc div.up div.row div.col2 {
+  width: 50%;
+}
+main.statics div.container div.colc div.up div.row div.col2 img {
+  width: 65%;
+  border-radius: 5%;
+}
+main.statics div.container div.colc hr.h1 {
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 5vmin;
+}
+main.statics div.container div.colc div.mid {
+  width: 100%;
+}
+main.statics div.container div.colc div.mid div.title {
+  font-size: 3.5vmin;
+  width: 50%;
+  padding: 2vmin;
+  display: flex;
+  align-items: center;
+  padding-left: 15%;
+  padding-right: 0;
+}
+main.statics div.container div.colc div.mid div.img {
+  width: 70%;
+  margin-left: 15%;
+}
+main.statics div.container div.colc div.mid div.img img {
+  margin-top: 1%;
+  width: 90%;
+  margin-left: 5%;
+}
+main.statics div.container div.colc hr.h2 {
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 5vmin;
+}
+main.statics div.container div.colc div.down {
+  width: 100%;
+}
+main.statics div.container div.colc div.down div.title {
+  font-size: 3.5vmin;
+  width: 50%;
+  padding: 2vmin;
+  display: flex;
+  align-items: center;
+  padding-left: 15%;
+  padding-right: 0;
+}
+main.statics div.container div.colc div.down div.row div.left {
+  padding-left: 15%;
+}
+main.statics div.container div.colc div.down div.row div.left img {
+  width: 100%;
+}
+main.statics div.container div.colc div.down div.row div.right {
+  padding-right: 15%;
+}
+main.statics div.container div.colc div.down div.row div.right table {
+  margin-top: 10%;
+  width: 100%;
+}
+main.statics div.container div.colc div.down div.row div.right table thead.thead-dark {
+  background-color: #ECBDBD;
+}
+main.statics div.row {
+  margin: 0;
+}/*# sourceMappingURL=statics.css.map */

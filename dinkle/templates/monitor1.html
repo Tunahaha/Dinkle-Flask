@@ -1,0 +1,331 @@
+{% extends 'base.html' %} 
+{% block css %}
+<link
+type="text/css"
+rel="stylesheet"
+href="{{ url_for('static', filename='styles/monitor1.css') }}"
+ /> 
+{% endblock %}
+{% block content %}
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-lg  n1">
+    <a class="navbar-brand text-white navword a1" href="https://www.dinkle.com/tw/">
+        <img src="{{ url_for('static', filename='image/icon.png') }}" class="d-inline-block " alt="">
+        Delight Through Connections
+      </a>
+      <div class="text-center navbar-center d1">
+        <h1 class="text-white navbar-collapse-center navbar-center">智慧品質預測管理系統</h1>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end d2">
+        <a class="navright nav-link  text-white a2" href="https://www.dinkle.com/tw/">
+    <img src="{{ url_for('static', filename='image/Vector.png') }}" class="d-inline-block " alt="">
+    登出
+  </a>
+      </div>
+  </nav>
+
+
+<nav class="nav-monitor navbar navbar-expand-lg  n2">
+<a class="navbar-brand" href="{{ url_for('hp1') }}">
+  <img src="{{ url_for('static', filename='image/Home.png') }}" class="d-inline-block " alt="">
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse font-monitor" id="navbarNav">
+  <ul class="navbar-nav h-100">
+    <li class="nav-item active li_monitor">
+      <a class="nav-link" id="111" href="{{ url_for('monitor1') }}">即時監控</a>
+    </li>
+    <li class="nav-item li_monitor">
+      <a class="nav-link" id="222" href="{{ url_for('image') }}">Detail預測</a>
+    </li>
+    <li class="nav-item  li_monitor">
+      <a class="nav-link" href="{{ url_for('fix') }}">維修回報</a>
+    </li>
+    <li class="nav-item li_monitor">
+      <a class="nav-link active" href="{{ url_for('information') }}">預測資訊</a>
+    </li>
+  </ul>
+</div>
+</nav>
+</header>
+<main class="monetor1">
+  <div class="container">
+    <div class="row row_moniter1">
+      <div class=" col-4 one text-center">
+        
+        <br>
+        {% if sta %}
+        <p class="text-center">預測品質狀態: <br>
+          合格  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt=""></p>
+       
+        
+        {% else  %}
+        <p class="text-center">預測品質狀態: <br>不合格
+        <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt=""></p>
+        {% endif %}
+
+      </div>
+    <div class="col-8 two text-center">
+        <br>
+        <p class="text-center">預測detail  {{reg}} 不合格 <br>
+        機台一需要調整
+        </p>
+    </div>
+    </div>
+
+    <div class="row row_moniter2">
+      <div class="col col_one">
+          <p class="text-center"><img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">預測良率
+            <br>
+            {{yie}} %</p>
+      </div>
+      <div class="col col_two">
+          <p class="text-center"><img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">預測不良率
+            <br>
+            {{nonyie}} %</p>
+      </div>
+        <hr>
+      <div class="col col_three">
+          <img src="{{ url_for('static', filename='image/donut.png') }}" alt="">
+      </div>
+    </div>
+</div>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col">
+            <div class="car_title">
+              <p>Detail1</p>
+              {% if y1 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_1.png') }}" alt="">
+          </div>
+          <div class="col">
+            <div class="car_title">
+              <p>Detail2</p>
+              {% if y2 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_2.png') }}" alt="">
+          </div>
+          <div class="col">
+            <div class="car_title">
+              <p>Detail3</p>
+              {% if y3 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_3.png') }}" alt="">
+          </div>
+          <div class="col">
+            <div class="car_title">
+              <p>Detail4</p>
+              {% if y4 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_4.png') }}" alt="">
+          </div>
+        </div>
+        
+      </div>
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col">
+            <div class="car_title">
+              <p>Detail5</p>
+              {% if y5 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_5.png') }}" alt="">
+          </div>
+          <div class="col">
+            <div class="car_title">
+              <p>Detail6</p>
+              {% if y6 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_6.png') }}" alt="">
+          </div>
+          <div class="col">
+            <div class="car_title">
+              <p>Detail7</p>
+              {% if y7 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_7.png') }}" alt="">
+          </div>
+          <div class="col">
+            <div class="car_title">
+              <p>Detail8</p>
+              {% if y8 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_8.png') }}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col">
+            <div class="car_title">
+              <p>Detail9</p>
+              {% if y9 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_9.png') }}" alt="">
+          </div>
+          <div class="col">
+            <div class="car_title">
+              <p>Detail10</p>
+              {% if y10 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_10.png') }}" alt="">
+          </div>
+          <div class="col">
+            <div class="car_title">
+              <p>Detail11</p>
+              {% if y11 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_11.png') }}" alt="">
+          </div>
+          <div class="col">
+            <div class="car_title">
+              <p>Detail12</p>
+              {% if y12 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_12.png') }}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col">
+            <div class="car_title">
+              <p>Detail13</p>
+              {% if y13 %}
+              <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+              {% else  %}
+              <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+              {% endif %}
+            </div>
+            <img class="d_image"  src="{{ url_for('static', filename='image/detail_13.png') }}" alt="">
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="container ddown">
+  <div class="col">
+<div class="foot row">
+  <div class="lost row">
+    <div class="row title">最適機台數據</div>
+    <hr>
+    <div class="row down">
+      <div class="col left">
+        <h1>速度</h1>
+        <img src="{{ url_for('static', filename='image/reSpeed.png') }}" alt="">
+      </div>
+      <div class="col right">
+        <h1>每秒沖壓次數</h1>
+
+        <img src="{{ url_for('static', filename='image/refre.png') }}" alt=""></div>
+  </div>
+    </div>
+    
+  <div class="row row_foot">
+    <div class="col">
+      <div class="foot_title"><h1>
+        機台轉速 {{now_speed}} rpm
+      </h1></div>
+      <hr>
+      <img src="{{ url_for('static', filename='image/speed.png') }}" alt="">
+      <div class="row row_down">
+        <div class="col"><p>設定:</p></div>
+        <div class="col"><p>Max: {{max_speed}} rpm</p></div>
+        <div class="w-100"></div>
+        <div class="col"><p>實際: {{now_speed}} rpm</p></div>
+        <div class="col"><p>Min: {{min_speed}} rpm</p></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="foot_title"><h1>
+        每秒沖壓次數 {{now_frequency}} 次
+      </h1></div>
+      <hr>
+      <img src="{{ url_for('static', filename='image/fre.png') }}" alt="">
+      <div class="row row_down">
+        <div class="col"><p>設定:</p></div>
+        <div class="col"><p>Max: {{max_fre}} 次</p></div>
+        <div class="w-100"></div>
+        <div class="col"><p>實際: {{now_frequency}} 次</p></div>
+        <div class="col"><p>Min: {{min_fre}} 次</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</main>
+{% endblock %}

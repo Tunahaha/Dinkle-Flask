@@ -1,0 +1,77 @@
+main.form div.container {
+  height: 80vh;
+}
+main.form div.container form {
+  margin-top: 5vmin;
+  height: 100%;
+  background-color: #E2E2E2;
+}
+main.form div.container form div.f1 {
+  display: flex;
+  font-size: 3vmin;
+  width: 100%;
+  padding-top: 5vh;
+}
+main.form div.container form div.f1 label {
+  margin-left: 15%;
+}
+main.form div.container form div.f1 input {
+  margin-left: 1%;
+  width: 59%;
+}
+main.form div.container form div.f2 {
+  font-size: 3vmin;
+  width: 100%;
+  margin-top: 3vh;
+  margin-left: 15%;
+}
+main.form div.container form div.f3 {
+  font-size: 3vmin;
+  width: 100%;
+  margin-top: 3vh;
+  margin-left: 15%;
+}
+main.form div.container form div.f3 select {
+  width: 60%;
+}
+main.form div.container form div.f4 {
+  font-size: 3vmin;
+  width: 100%;
+  margin-top: 3vh;
+  margin-left: 15%;
+}
+main.form div.container form div.f4 select {
+  width: 60%;
+}
+main.form div.container form div.f5 {
+  font-size: 3vmin;
+  width: 100%;
+  margin-top: 3vh;
+  margin-left: 22.5%;
+  display: flex;
+  height: 30%;
+}
+main.form div.container form div.f5 textarea {
+  width: 59%;
+  margin-left: 1%;
+}
+main.form div.container form hr {
+  width: 80%;
+  margin-left: 10%;
+  border: 1px solid black;
+  color: black;
+}
+main.form div.container form button.btn1 {
+  font-size: 3.5vmin;
+  margin-top: 1.5vmin;
+  margin-left: 35%;
+  background-color: #F18787;
+  width: 20vmin;
+}
+main.form div.container form a.btn2 {
+  font-size: 3.5vmin;
+  background-color: #F18787;
+  margin-top: 1.5vmin;
+  margin-left: 5%;
+  width: 20vmin;
+}/*# sourceMappingURL=form.css.map */

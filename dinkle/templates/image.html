@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ZH">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- goole font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">  
+      <!--css-->
+      <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/style.css') }}"
+       /> 
+       <link
+       type="text/css"
+       rel="stylesheet"
+       href="{{ url_for('static', filename='styles/image.css') }}"
+        /> 
+    <title>Dinkle</title>
+        <meta name="description" content="登入介面" />
+    </head>
+    
+  <body>
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg  n1">
+        <a class="navbar-brand text-white navword a1" href="https://www.dinkle.com/tw/">
+            <img src="{{ url_for('static', filename='image/icon.png') }}" class="d-inline-block " alt="">
+            Delight Through Connections
+          </a>
+          <div class="text-center navbar-center d1">
+            <h1 class="text-white navbar-collapse-center navbar-center">智慧品質預測管理系統</h1>
+          </div>
+          <div class="collapse navbar-collapse justify-content-end d2">
+            <a class="navright nav-link  text-white a2" href="https://www.dinkle.com/tw/">
+        <img src="{{ url_for('static', filename='image/Vector.png') }}" class="d-inline-block " alt="">
+        登出
+      </a>
+          </div>
+      </nav>
+    
+    
+    <nav class="nav-monitor navbar navbar-expand-lg  n2">
+    <a class="navbar-brand" href="{{ url_for('hp1') }}">
+      <img src="{{ url_for('static', filename='image/Home.png') }}" class="d-inline-block " alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse font-monitor" id="navbarNav">
+      <ul class="navbar-nav h-100">
+        <li class="nav-item  li_monitor">
+            <a class="nav-link" id="111" href="{{ url_for('monitor1') }}">即時監控</a>
+        </li>
+        <li class="nav-item active li_monitor">
+          <a class="nav-link" id="222" href="{{ url_for('image') }}">Detail預測</a>
+        </li>
+        <li class="nav-item   li_monitor">
+          <a class="nav-link" href="{{ url_for('fix') }}">維修回報</a>
+        </li>
+        <li class="nav-item li_monitor">
+          <a class="nav-link active" href="{{ url_for('information') }}">預測資訊</a>
+        </li>
+      </ul>
+    </div>
+    </nav>
+    </header>
+  <main class="image">
+    <div class="container">
+      <div class="row row_image">
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 1</h1>
+                  {% if y1 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img id="slide_photo" src="{{ url_for('static', filename='image/detail_1.png') }}" alt="">
+             
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:3.25~3.35</p>
+              <br>
+              {% if (color_lstmax['detail_1']) and (color_lstmin['detail_1'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min1}}</p><p>~</p><p>{{max1}}</p></div>
+              {% elif (not (color_lstmax['detail_1'])) and (color_lstmin['detail_1']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min1}}</p><p> ~ </p><p style="color: #FF0909;">{{max1}}</p></div>
+              {% elif (color_lstmax['detail_1']) and  not (color_lstmin['detail_1']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min1}}</p><p> ~ </p><p>{{max1}}</p></div>
+              {% elif (not (color_lstmax['detail_1'])) and  not (color_lstmin['detail_1']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min1}}</p><p> ~ </p><p style="color: #FF0909;">{{max1}}</p></div>
+              {% endif %}
+            </div>         
+          </div>
+        </div>
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 2</h1>
+                  {% if y2 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_2.png') }}" alt="">
+                 
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:2.2~2.3</p>
+              <br>
+              {% if (color_lstmax['detail_2']) and (color_lstmin['detail_2'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min2}}</p><p>~</p><p>{{max2}}</p></div>
+              {% elif (not (color_lstmax['detail_2'])) and (color_lstmin['detail_2']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min2}}</p><p> ~ </p><p style="color: #FF0909;">{{max2}}</p></div>
+              {% elif (color_lstmax['detail_2']) and  not (color_lstmin['detail_2']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min2}}</p><p> ~ </p><p>{{max2}}</p></div>
+              {% elif (not (color_lstmax['detail_2'])) and  not (color_lstmin['detail_2']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min2}}</p><p> ~ </p><p style="color: #FF0909;">{{max2}}</p></div>
+              {% endif %}
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div class="row row_image">
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 3</h1>
+                  {% if y3 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_3.png') }}" alt="">
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:6.14~6.3</p>
+              <br>
+              {% if (color_lstmax['detail_3']) and (color_lstmin['detail_3'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min3}}</p><p>~</p><p>{{max3}}</p></div>
+              {% elif (not (color_lstmax['detail_3'])) and (color_lstmin['detail_3']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min3}}</p><p> ~ </p><p style="color: #FF0909;">{{max3}}</p></div>
+              {% elif (color_lstmax['detail_3']) and  not (color_lstmin['detail_3']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min3}}</p><p> ~ </p><p>{{max3}}</p></div>
+              {% elif (not (color_lstmax['detail_3'])) and  not (color_lstmin['detail_3']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min3}}</p><p> ~ </p><p style="color: #FF0909;">{{max3}}</p></div>
+              {% endif %}
+            </div> 
+          </div>
+        
+        </div>
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 4</h1>
+                  {% if y4 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_4.png') }}" alt="">
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:2.63~2.77</p>
+              <br>
+              {% if (color_lstmax['detail_4']) and (color_lstmin['detail_4'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min4}}</p><p>~</p><p>{{max4}}</p></div>
+              {% elif (not (color_lstmax['detail_4'])) and (color_lstmin['detail_4']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min4}}</p><p> ~ </p><p style="color: #FF0909;">{{max4}}</p></div>
+              {% elif (color_lstmax['detail_4']) and  not (color_lstmin['detail_4']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min4}}</p><p> ~ </p><p>{{max4}}</p></div>
+              {% elif (not (color_lstmax['detail_4'])) and  not (color_lstmin['detail_4']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min4}}</p><p> ~ </p><p style="color: #FF0909;">{{max4}}</p></div>
+              {% endif %}
+            </div>         
+          </div>
+        </div>
+      </div>
+      <div class="row row_image">
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 5</h1>
+                  {% if y5 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_5.png') }}" alt="">
+            
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:2.1~2.3</p>
+              <br>
+              {% if (color_lstmax['detail_5']) and (color_lstmin['detail_5'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min5}}</p><p>~</p><p>{{max5}}</p></div>
+              {% elif (not (color_lstmax['detail_5'])) and (color_lstmin['detail_5']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min5}}</p><p> ~ </p><p style="color: #FF0909;">{{max5}}</p></div>
+              {% elif (color_lstmax['detail_5']) and  not (color_lstmin['detail_5']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min5}}</p><p> ~ </p><p>{{max5}}</p></div>
+              {% elif (not (color_lstmax['detail_5'])) and  not (color_lstmin['detail_5']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min5}}</p><p> ~ </p><p style="color: #FF0909;">{{max5}}</p></div>
+              {% endif %}
+            </div>         
+          </div>
+        </div>
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 6</h1>
+                  {% if y6 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_6.png') }}" alt="">
+            
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:3.23~3.37</p>
+              <br>
+              {% if (color_lstmax['detail_6']) and (color_lstmin['detail_6'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min6}}</p><p>~</p><p>{{max6}}</p></div>
+              {% elif (not (color_lstmax['detail_6'])) and (color_lstmin['detail_6']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min6}}</p><p> ~ </p><p style="color: #FF0909;">{{max6}}</p></div>
+              {% elif (color_lstmax['detail_6']) and  not (color_lstmin['detail_6']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min6}}</p><p> ~ </p><p>{{max6}}</p></div>
+              {% elif (not (color_lstmax['detail_6'])) and  not (color_lstmin['detail_6']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min6}}</p><p> ~ </p><p style="color: #FF0909;">{{max6}}</p></div>
+              {% endif %}
+            </div>         
+          </div>
+        </div>
+      </div>
+      <div class="row row_image">
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 7</h1>
+                  {% if y7 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_7.png') }}" alt="">
+          
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:2.34~2.54</p>
+              <br>
+              {% if (color_lstmax['detail_7']) and (color_lstmin['detail_7'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min7}}</p><p>~</p><p>{{max7}}</p></div>
+              {% elif (not (color_lstmax['detail_7'])) and (color_lstmin['detail_7']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min7}}</p><p> ~ </p><p style="color: #FF0909;">{{max7}}</p></div>
+              {% elif (color_lstmax['detail_7']) and  not (color_lstmin['detail_7']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min7}}</p><p> ~ </p><p>{{max7}}</p></div>
+              {% elif (not (color_lstmax['detail_7'])) and  not (color_lstmin['detail_7']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min7}}</p><p> ~ </p><p style="color: #FF0909;">{{max7}}</p></div>
+              {% endif %}
+            </div>         
+          </div>
+        </div>
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 8</h1>
+                  {% if y8 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_8.png') }}" alt="">
+      
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:0.38~0.42</p>
+              <br>
+              {% if (color_lstmax['detail_8']) and (color_lstmin['detail_8'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min8}}</p><p>~</p><p>{{max8}}</p></div>
+              {% elif (not (color_lstmax['detail_8'])) and (color_lstmin['detail_8']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min8}}</p><p> ~ </p><p style="color: #FF0909;">{{max8}}</p></div>
+              {% elif (color_lstmax['detail_8']) and  not (color_lstmin['detail_8']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min8}}</p><p> ~ </p><p>{{max8}}</p></div>
+              {% elif (not (color_lstmax['detail_8'])) and  not (color_lstmin['detail_8']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min8}}</p><p> ~ </p><p style="color: #FF0909;">{{max8}}</p></div>
+              {% endif %}
+            </div>         
+          </div>
+        </div>
+      </div>
+      <div class="row row_image">
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 9</h1>
+                  {% if y9 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_9.png') }}" alt="">
+          
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:0.53~0.63</p>
+              <br>
+              {% if (color_lstmax['detail_9']) and (color_lstmin['detail_9'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min9}}</p><p>~</p><p>{{max9}}</p></div>
+              {% elif (not (color_lstmax['detail_9'])) and (color_lstmin['detail_9']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min9}}</p><p> ~ </p><p style="color: #FF0909;">{{max9}}</p></div>
+              {% elif (color_lstmax['detail_9']) and  not (color_lstmin['detail_9']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min9}}</p><p> ~ </p><p>{{max9}}</p></div>
+              {% elif (not (color_lstmax['detail_9'])) and  not (color_lstmin['detail_9']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min9}}</p><p> ~ </p><p style="color: #FF0909;">{{max9}}</p></div>
+              {% endif %}
+            </div>         
+          </div>
+        </div>
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 10</h1>
+                  {% if y10 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_10.png') }}" alt="">
+            
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:0.53~0.63</p>
+              <br>
+              {% if (color_lstmax['detail_10']) and (color_lstmin['detail_10'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min10}}</p><p>~</p><p>{{max10}}</p></div>
+              {% elif (not (color_lstmax['detail_10'])) and (color_lstmin['detail_10']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min10}}</p><p> ~ </p><p style="color: #FF0909;">{{max10}}</p></div>
+              {% elif (color_lstmax['detail_10']) and  not (color_lstmin['detail_10']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min10}}</p><p> ~ </p><p>{{max10}}</p></div>
+              {% elif (not (color_lstmax['detail_10'])) and  not (color_lstmin['detail_10']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min10}}</p><p> ~ </p><p style="color: #FF0909;">{{max10}}</p></div>
+              {% endif %}
+            </div>         
+          </div>
+        </div>
+      </div>
+      <div class="row row_image">
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 11</h1>
+                  {% if y11 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_11.png') }}" alt="">
+          
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:0.53~0.63</p>
+              <br>
+              {% if (color_lstmax['detail_11']) and (color_lstmin['detail_11'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min11}}</p><p>~</p><p>{{max11}}</p></div>
+              {% elif (not (color_lstmax['detail_11'])) and (color_lstmin['detail_11']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min11}}</p><p> ~ </p><p style="color: #FF0909;">{{max11}}</p></div>
+              {% elif (color_lstmax['detail_11']) and  not (color_lstmin['detail_11']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min11}}</p><p> ~ </p><p>{{max11}}</p></div>
+              {% elif (not (color_lstmax['detail_11'])) and  not (color_lstmin['detail_11']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min11}}</p><p> ~ </p><p style="color: #FF0909;">{{max11}}</p></div>
+              {% endif %}
+            </div>         
+          </div>
+        </div>
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 12</h1>
+                  {% if y12 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_12.png') }}" alt="">
+              
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:0.53~0.63</p>
+              <br>
+              {% if (color_lstmax['detail_12']) and (color_lstmin['detail_12'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min12}}</p><p>~</p><p>{{max12}}</p></div>
+              {% elif (not (color_lstmax['detail_12'])) and (color_lstmin['detail_12']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min12}}</p><p> ~ </p><p style="color: #FF0909;">{{max12}}</p></div>
+              {% elif (color_lstmax['detail_12']) and  not (color_lstmin['detail_12']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min12}}</p><p> ~ </p><p>{{max12}}</p></div>
+              {% elif (not (color_lstmax['detail_12'])) and  not (color_lstmin['detail_12']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min12}}</p><p> ~ </p><p style="color: #FF0909;">{{max12}}</p></div>
+              {% endif %}
+            </div>         
+
+          </div>
+        </div>
+      </div>
+      <div class="row row_image">
+        <div class="col">
+          <div class="row row_image_deatil">
+            <div class="col col_image">
+              <div class="row_title">
+                  <h1>Detail 13</h1>
+                  {% if y13 %}
+                  <img src="{{ url_for('static', filename='image/greencycle.png') }}" alt="">
+                  <p>合格</p>
+                  {% else  %}
+                  <img src="{{ url_for('static', filename='image/Redcircle.png') }}" alt="">
+                  <p>不合格</p>
+                  {% endif %}
+              </div>    
+              <img src="{{ url_for('static', filename='image/detail_13.png') }}" alt="">       
+            </div>
+            <div class="col col_data">
+              <p>合格範圍:0.53~0.63</p>
+              <br>
+              {% if (color_lstmax['detail_13']) and (color_lstmin['detail_13'])  %}
+              <div class="hello"><p>預測範圍: </p><p>{{min13}}</p><p>~</p><p>{{max13}}</p></div>
+              {% elif (not (color_lstmax['detail_13'])) and (color_lstmin['detail_13']) %}
+              <div class="hello"><p>預測範圍: </p><p>{{min13}}</p><p> ~ </p><p style="color: #FF0909;">{{max13}}</p></div>
+              {% elif (color_lstmax['detail_13']) and  not (color_lstmin['detail_13']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min13}}</p><p> ~ </p><p>{{max13}}</p></div>
+              {% elif (not (color_lstmax['detail_13'])) and  not (color_lstmin['detail_13']) %}
+              <div class="hello"><p>預測範圍: </p><p  style="color: #FF0909;">{{min13}}</p><p> ~ </p><p style="color: #FF0909;">{{max13}}</p></div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col">
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  </html>

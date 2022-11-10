@@ -1,0 +1,174 @@
+main.fix{
+    padding-top: 5vmin;
+    width: 100%;
+    div.slide{
+        background-color: #E2E2E2;
+        height: 60vh;
+        width: 90%;
+        margin-left: 5%;
+        div.carousel-inner{
+            height: 100%;
+            div.carousel-item{
+                height: 100%;
+                div.row-title{
+                    height: 15%;
+                    font-size: 4vmin;
+                    div.col{
+                        p{
+                            margin-left: 10%;
+                        }
+                        div.dropdown{
+                            float: right;
+                            margin-right: 10%;
+                        }
+                    }
+                }
+                div.row1{
+                    height: 70%;
+                    div.col1{
+                        margin:0 2.5%;
+                        background-color: white;
+                        div.title{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 2vmin;
+                        }
+                        div.ale{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 2.5vmin;
+                            height: 10%;
+                            margin-top: 10%;
+                        }
+                        div.res{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 10%;
+                            font-size:2.5vmin;
+                            p{
+                                color: #FF0000;
+                            }
+                        }
+                        div.choose{
+                            height: 30%;
+                            display: flex;
+                            div.yes{
+                                width: 50%;
+                                margin: 5%;
+                                background-color: #F18787;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 2.5vmin;
+                            }
+                            div.no{
+                                width: 50%;
+                                margin: 5%;
+                                background-color: #D9D9D9;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 2.5vmin;
+                            }
+                            
+                        }
+                        div.complete{
+                            height: 20%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 3.5vmin;
+
+                        }
+                    }
+                }
+            }
+        }
+        button.carousel-control-prev{
+            height: 10%;
+            top: 45%;
+            width: 5%;
+            span{
+                background-color:black;
+                border:3px black solid;
+                border-radius: 50%;
+            }
+        }
+        button.carousel-control-next{
+            height: 10%;
+            top: 45%;
+            width: 5%;
+            span{
+                background-color:black;
+                border:3px black solid;
+                border-radius: 50%;
+            }
+        }
+        
+    }
+}
+footer.fix{
+    margin-top: 5vh;
+    div.container{
+        background-color: #E2E2E2;
+        width: 90vw;
+        max-width: 90vw;
+        margin: 0;
+        margin-left: 5vw;
+        div.title{
+            display: flex;
+            h3{
+                margin-top: 2%;
+                margin-left: 3%;
+            }
+            div.col{
+                margin-top: 2%;
+                button{
+                    float: right;
+                    margin-right: 5%;
+                }
+
+            }
+        }
+        div.col1{
+            width: 80%;
+            margin-left: 10%;
+            div.row1{
+                background-color: #FFFFFF;
+                margin-top: 2%;
+                div.reason{
+                    margin-left: 1%;
+                    margin-top: 1%;
+                    font-size: 2.5vmin;
+                    display: flex;
+                    p{
+                        color: #FF0000;
+                    }
+                }
+                div.row2{
+                    margin-left: 15%;
+                    font-size: 2.5vmin;
+                }
+                div.row3{
+                    margin-left: 15%;
+                    font-size: 2.5vmin;
+                }
+                div.icon{
+                    margin-left: 85%;
+                    width: 12vmin;
+                    display: flex;
+                    img{
+                        width: 2.5vmin;
+                        height: 2.5vmin;
+                    }
+                    p{
+                        margin-left: 1%;
+                    }
+                }
+            }
+        }
+    }
+}

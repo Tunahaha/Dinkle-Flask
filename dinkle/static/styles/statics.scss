@@ -1,0 +1,116 @@
+main.statics{
+    div.container{
+        margin: 0;
+        max-width: 100%;
+        padding: 0;
+        div.colc{
+            padding:0;
+
+            div.up{
+
+                div.title{
+                    font-size: 3.5vmin;
+                    width: 50%;
+                    padding: 2vmin;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 15%;
+                    padding-right: 0;
+                    
+                }
+                div.row{
+
+                    width: 100%;
+                    padding: 0;
+                    div.col1{
+                        
+                        width: 50%;
+                        
+                        img{
+                            float: right;
+                            width: 65%;
+                            border-radius: 5%;
+                        }
+                    }
+                    div.col2{                       
+                        width: 50%;
+                        img{
+                            width: 65%;
+                            border-radius: 5%;
+                        }
+                    }
+                }
+            }
+            hr.h1{
+                width: 70%;
+                margin-left: 15%;
+                margin-top: 5vmin;
+
+            }
+            div.mid{
+                width: 100%;
+                div.title{
+                    font-size: 3.5vmin;
+                    width: 50%;
+                    padding: 2vmin;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 15%;
+                    padding-right: 0;
+ 
+                }
+                div.img{
+                    width: 70%;
+                    margin-left: 15%;
+                    img{
+                        margin-top: 1%;
+                        width: 90%;
+                        margin-left: 5%;
+                    }
+                }
+            }
+            hr.h2{
+                width: 70%;
+                margin-left: 15%;
+                margin-top: 5vmin;
+            }
+            div.down{
+                width: 100%;
+                div.title{
+                    font-size: 3.5vmin;
+                    width: 50%;
+                    padding: 2vmin;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 15%;
+                    padding-right: 0;
+
+                }
+                div.row{
+                    div.left{
+                        padding-left: 15%;
+                       img{
+                        width: 100%;
+                       }
+                    }
+                    div.right{
+
+                        padding-right: 15%;
+                        
+                        table{
+                            margin-top: 10%;
+                            width: 100%;
+                            thead.thead-dark{
+                                background-color: #ECBDBD;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.row{
+        margin: 0;
+    }
+}

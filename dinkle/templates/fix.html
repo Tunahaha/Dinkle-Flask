@@ -1,0 +1,192 @@
+{% extends 'base.html' %} 
+{% block css %}
+<link
+type="text/css"
+rel="stylesheet"
+href="{{ url_for('static', filename='styles/fix.css') }}"
+ /> 
+{% endblock %}
+{% block content %}
+<header class="sticky-top">
+    <nav class="navbar navbar-expand-lg  n1">
+      <a class="navbar-brand text-white navword a1" href="https://www.dinkle.com/tw/">
+          <img src="{{ url_for('static', filename='image/icon.png') }}" class="d-inline-block " alt="">
+          Delight Through Connections
+        </a>
+        <div class="text-center navbar-center d1">
+          <h1 class="text-white navbar-collapse-center navbar-center">智慧品質預測管理系統</h1>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end d2">
+          <a class="navright nav-link  text-white a2" href="https://www.dinkle.com/tw/">
+      <img src="{{ url_for('static', filename='image/Vector.png') }}" class="d-inline-block " alt="">
+      登出
+    </a>
+        </div>
+    </nav>
+  
+  
+  <nav class="nav-monitor navbar navbar-expand-lg  n2">
+  <a class="navbar-brand" href="{{ url_for('hp1') }}">
+    <img src="{{ url_for('static', filename='image/Home.png') }}" class="d-inline-block " alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse font-monitor" id="navbarNav">
+    <ul class="navbar-nav h-100">
+      <li class="nav-item  li_monitor">
+        <a class="nav-link" id="111" href="{{ url_for('monitor1') }}">即時監控</a>
+      </li>
+      <li class="nav-item li_monitor">
+        <a class="nav-link" id="222" href="{{ url_for('image') }}">Detail預測</a>
+      </li>
+      <li class="nav-item active li_monitor">
+        <a class="nav-link" href="{{ url_for('fix') }}">維修回報</a>
+      </li>
+      <li class="nav-item li_monitor">
+        <a class="nav-link active" href="{{ url_for('information') }}">預測資訊</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+  </header>
+<main class="fix">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row row-title">
+          <div class="col"><p>維修資訊通知</p></div>
+        </div>
+        <div class="row row1">
+          <div class="col col1">
+            <div class="title"><p>時間{{error_lst[0]['time']}} {{error_lst[0]['hour']}}</p></div>
+            <div class="ale">
+            <p>預警原因:</p>
+            </div>
+            <div class="res"><p>Detail {{err1}} 異常</p></div>
+            <div class="choose">
+              <div class="yes"><a href="{{ url_for('form') }}">進行維修</a></div>
+              <div class="no">不維修</div>
+            </div>
+            <div class="complete">未完成</div>
+          </div>
+          <div class="col col1">
+            <div class="title"><p>時間{{error_lst[1]['time']}} {{error_lst[1]['hour']}}</p></div>
+            <div class="ale">
+            <p>預警原因:</p>
+            </div>
+            <div class="res"><p>Detail {{err2}} 異常</p></div>
+            <div class="choose">
+              <div class="yes"><a href="{{ url_for('form') }}">進行維修</a></div>
+              <div class="no">不維修</div>
+            </div>
+            <div class="complete">未完成</div>
+          </div>
+          <div class="col col1">
+            <div class="title"><p>時間{{error_lst[2]['time']}} {{error_lst[2]['hour']}}</p></div>
+            <div class="ale">
+            <p>預警原因:</p>
+            </div>
+            <div class="res"><p>Detail {{err3}} 異常</p></div>
+            <div class="choose">
+              <div class="yes"><a href="{{ url_for('form') }}">進行維修</a></div>
+              <div class="no">不維修</div>
+            </div>
+            <div class="complete">未完成</div>
+          </div>
+          <div class="col col1">
+            <div class="title"><p>時間{{error_lst[3]['time']}} {{error_lst[3]['hour']}}</p></div>
+            <div class="ale">
+            <p>預警原因:</p>
+            </div>
+            <div class="res"><p>Detail {{err4}} 異常</p></div>
+            <div class="choose">
+              <div class="yes"><a href="{{ url_for('form') }}">進行維修</a></div>
+              <div class="no">不維修</div>
+            </div>
+            <div class="complete">未完成</div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</main>
+<footer class="fix">
+  <div class="container">
+    <div class="title">
+      <h3>維修項目</h3>
+    </div>
+      <div class="col col1">
+        <div class="row row1">
+          <div class="reason">預警原因: <p>Detail {{err1}} 異常</p></div>
+          <div class="row row2">
+            <div class="col"><p>預警時間:{{error_lst[0]['time']}} {{error_lst[0]['hour']}}</p></div>
+            <div class="col"><p>維修項目:</p></div>
+          </div>
+          <div class="row row3">
+            <div class="col"><p>回報時間:</p></div>
+            <div class="col"><p>附註:</p></div>
+          </div>
+          <div class="icon">
+            <img src="{{ url_for('static', filename='image/fix.png') }}" alt=""><p>維修中</p>
+          </div>
+        </div>
+        <div class="row row1">
+          <div class="reason">預警原因:<p>Detail {{err2}} 異常</p></div>
+          <div class="row row2">
+            <div class="col"><p>預警時間:{{error_lst[1]['time']}} {{error_lst[1]['hour']}}</p></div>
+            <div class="col"><p>維修項目:</p></div>
+          </div>
+          <div class="row row3">
+            <div class="col"><p>回報時間:</p></div>
+            <div class="col"><p>附註:</p></div>
+          </div>
+          <div class="icon">
+            <img src="{{ url_for('static', filename='image/fix.png') }}" alt=""><p>維修中</p>
+          </div>
+        </div>
+        <div class="row row1">
+          <div class="reason">預警原因: <p>Detail {{err3}} 異常</p></div>
+          <div class="row row2">
+            <div class="col"><p>預警時間:{{error_lst[2]['time']}} {{error_lst[2]['hour']}}</p></div>
+            <div class="col"><p>維修項目:</p></div>
+          </div>
+          <div class="row row3">
+            <div class="col"><p>回報時間:</p></div>
+            <div class="col"><p>附註:</p></div>
+          </div>
+          <div class="icon">
+            <img src="{{ url_for('static', filename='image/fix.png') }}" alt=""><p>維修中</p>
+          </div>
+        </div>
+        <div class="row row1">
+          <div class="reason">預警原因: <p>Detail {{err4}} 異常</p></div>
+          <div class="row row2">
+            <div class="col"><p>預警時間:{{error_lst[3]['time']}} {{error_lst[3]['hour']}}</p></div>
+            <div class="col"><p>維修項目:</p></div>
+          </div>
+          <div class="row row3">
+            <div class="col"><p>回報時間:</p></div>
+            <div class="col"><p>附註:</p></div>
+          </div>
+          <div class="icon">
+            <img src="{{ url_for('static', filename='image/fix.png') }}" alt=""><p>維修中</p>
+          </div>
+        </div>
+      </div>
+<div class="down">第一頁</div>
+<button class="left" type="button"></button>
+<button class="right" type="button"></button>
+  </div>
+</footer>
+{% endblock %}

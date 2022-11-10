@@ -1,0 +1,46 @@
+main.index{
+    section.backimage{
+        min-height: 90vh;
+        width: 100%;
+        background-color: #FFFFFF;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        h3{
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 10%;
+        }
+        form{
+            min-height: 60vh;
+            min-width: 30vw;
+            background-color: #D8D8D8;
+            font-size: 2rem;
+            div{
+                margin: 10%;
+            }
+            input.form-control{
+                    border: 0;
+                    outline: 0;
+                    background: transparent;
+                    border-bottom: 1px solid black;
+                    border-radius: 0;
+
+            }
+            button{
+                background-color: #F2C5C5;
+                color: black;
+                width: 200px;
+                height: 75px;
+                border: none;
+                font-size: 32px;
+            }
+        
+        }
+    }
+
+}

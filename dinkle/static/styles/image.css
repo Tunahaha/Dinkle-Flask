@@ -1,0 +1,65 @@
+main.image div.container {
+  max-width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+main.image div.container div.row_image {
+  max-width: 100%;
+}
+main.image div.container div.row_image div.col {
+  padding: 2% 2.5%;
+}
+main.image div.container div.row_image div.row_image_deatil {
+  background-color: #D3D3D3;
+  width: 100%;
+}
+main.image div.container div.row_image div.row_image_deatil div.col_image {
+  width: 50%;
+  height: 50%;
+  float: left;
+  max-width: 50%;
+  min-width: 50%;
+}
+main.image div.container div.row_image div.row_image_deatil div.col_image div.row_title {
+  width: 100%;
+  min-width: 100%;
+  display: flex;
+}
+main.image div.container div.row_image div.row_image_deatil div.col_image div.row_title h1 {
+  margin: 0px auto;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 4vmin;
+}
+main.image div.container div.row_image div.row_image_deatil div.col_image div.row_title img {
+  display: block;
+  margin: auto;
+  width: 3vmin;
+  height: 3vmin;
+}
+main.image div.container div.row_image div.row_image_deatil div.col_image div.row_title p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vmin;
+}
+main.image div.container div.row_image div.row_image_deatil div.col_image img {
+  width: 100%;
+}
+main.image div.container div.row_image div.row_image_deatil div.col_data {
+  background-color: #FFFFFF;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
+  font-size: 2.5vmin;
+}
+main.image div.container div.row_image div.row_image_deatil div.col_data div.hello {
+  min-width: 50%;
+  display: flex;
+}
+main.image div.container div.row_image div.row_image_deatil div.col_data div.hello p {
+  display: flex;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=image.css.map */

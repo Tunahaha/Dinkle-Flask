@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block css %}
+<link
+type="text/css"
+rel="stylesheet"
+href="{{ url_for('static', filename='styles/hp1.css') }}"
+ /> 
+{% endblock %}
+{% block content %}
+<!--header-->
+<header class="sticky-top">
+    <nav class="navbar navbar-expand-lg  n1">
+        <a class="navbar-brand text-white navword a1" href="https://www.dinkle.com/tw/">
+            <img src="{{ url_for('static', filename='image/icon.png') }}" class="d-inline-block " alt="">
+            Delight Through Connections
+          </a>
+          <div class="text-center navbar-center d1">
+            <h1 class="text-white navbar-collapse-center navbar-center">智慧品質預測管理系統</h1>
+          </div>
+          <div class="collapse navbar-collapse justify-content-end d2">
+            <a class="navright nav-link  text-white a2" href="https://www.dinkle.com/tw/">
+        <img src="{{ url_for('static', filename='image/Vector.png') }}" class="d-inline-block " alt="">
+        登出
+      </a>
+          </div>
+      </nav>
+
+</header>
+<!--bg setting-->
+<main class="hp1">
+  <hr size="3px" class="hr1">
+  <div class="container hp1_container">
+        <a href="{{url_for('monitor1')}}" class="col1">
+      <div class="col col1 text-center">
+        即時監控
+      </div>
+    </a>
+    <a href="{{ url_for('statics') }}" class="col2">
+      <div class="col col2 text-center">
+        資料分析
+      </div></a>
+  </main>
+{% endblock %}

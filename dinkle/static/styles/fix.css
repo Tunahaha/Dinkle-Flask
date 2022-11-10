@@ -1,0 +1,169 @@
+main.fix {
+  padding-top: 5vmin;
+  width: 100%;
+}
+main.fix div.slide {
+  background-color: #E2E2E2;
+  height: 60vh;
+  width: 90%;
+  margin-left: 5%;
+}
+main.fix div.slide div.carousel-inner {
+  height: 100%;
+}
+main.fix div.slide div.carousel-inner div.carousel-item {
+  height: 100%;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row-title {
+  height: 15%;
+  font-size: 4vmin;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row-title div.col p {
+  margin-left: 10%;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row-title div.col div.dropdown {
+  float: right;
+  margin-right: 10%;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row1 {
+  height: 70%;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row1 div.col1 {
+  margin: 0 2.5%;
+  background-color: white;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row1 div.col1 div.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vmin;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row1 div.col1 div.ale {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5vmin;
+  height: 10%;
+  margin-top: 10%;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row1 div.col1 div.res {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  font-size: 2.5vmin;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row1 div.col1 div.res p {
+  color: #FF0000;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row1 div.col1 div.choose {
+  height: 30%;
+  display: flex;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row1 div.col1 div.choose div.yes {
+  width: 50%;
+  margin: 5%;
+  background-color: #F18787;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5vmin;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row1 div.col1 div.choose div.no {
+  width: 50%;
+  margin: 5%;
+  background-color: #D9D9D9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5vmin;
+}
+main.fix div.slide div.carousel-inner div.carousel-item div.row1 div.col1 div.complete {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5vmin;
+}
+main.fix div.slide button.carousel-control-prev {
+  height: 10%;
+  top: 45%;
+  width: 5%;
+}
+main.fix div.slide button.carousel-control-prev span {
+  background-color: black;
+  border: 3px black solid;
+  border-radius: 50%;
+}
+main.fix div.slide button.carousel-control-next {
+  height: 10%;
+  top: 45%;
+  width: 5%;
+}
+main.fix div.slide button.carousel-control-next span {
+  background-color: black;
+  border: 3px black solid;
+  border-radius: 50%;
+}
+
+footer.fix {
+  margin-top: 5vh;
+}
+footer.fix div.container {
+  background-color: #E2E2E2;
+  width: 90vw;
+  max-width: 90vw;
+  margin: 0;
+  margin-left: 5vw;
+}
+footer.fix div.container div.title {
+  display: flex;
+}
+footer.fix div.container div.title h3 {
+  margin-top: 2%;
+  margin-left: 3%;
+}
+footer.fix div.container div.title div.col {
+  margin-top: 2%;
+}
+footer.fix div.container div.title div.col button {
+  float: right;
+  margin-right: 5%;
+}
+footer.fix div.container div.col1 {
+  width: 80%;
+  margin-left: 10%;
+}
+footer.fix div.container div.col1 div.row1 {
+  background-color: #FFFFFF;
+  margin-top: 2%;
+}
+footer.fix div.container div.col1 div.row1 div.reason {
+  margin-left: 1%;
+  margin-top: 1%;
+  font-size: 2.5vmin;
+  display: flex;
+}
+footer.fix div.container div.col1 div.row1 div.reason p {
+  color: #FF0000;
+}
+footer.fix div.container div.col1 div.row1 div.row2 {
+  margin-left: 15%;
+  font-size: 2.5vmin;
+}
+footer.fix div.container div.col1 div.row1 div.row3 {
+  margin-left: 15%;
+  font-size: 2.5vmin;
+}
+footer.fix div.container div.col1 div.row1 div.icon {
+  margin-left: 85%;
+  width: 12vmin;
+  display: flex;
+}
+footer.fix div.container div.col1 div.row1 div.icon img {
+  width: 2.5vmin;
+  height: 2.5vmin;
+}
+footer.fix div.container div.col1 div.row1 div.icon p {
+  margin-left: 1%;
+}/*# sourceMappingURL=fix.css.map */

@@ -1,0 +1,82 @@
+{% extends 'base.html' %} 
+{% block css %}
+<link
+type="text/css"
+rel="stylesheet"
+href="{{ url_for('static', filename='styles/information.css') }}"
+ /> 
+{% endblock %}
+{% block content %}
+<header class="sticky-top">
+    <nav class="navbar navbar-expand-lg  n1">
+      <a class="navbar-brand text-white navword a1" href="https://www.dinkle.com/tw/">
+          <img src="{{ url_for('static', filename='image/icon.png') }}" class="d-inline-block " alt="">
+          Delight Through Connections
+        </a>
+        <div class="text-center navbar-center d1">
+          <h1 class="text-white navbar-collapse-center navbar-center">智慧品質預測管理系統</h1>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end d2">
+          <a class="navright nav-link  text-white a2" href="https://www.dinkle.com/tw/">
+      <img src="{{ url_for('static', filename='image/Vector.png') }}" class="d-inline-block " alt="">
+      登出
+    </a>
+        </div>
+    </nav>
+  
+  
+  <nav class="nav-monitor navbar navbar-expand-lg  n2">
+  <a class="navbar-brand" href="{{ url_for('hp1') }}">
+    <img src="{{ url_for('static', filename='image/Home.png') }}" class="d-inline-block " alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse font-monitor" id="navbarNav">
+    <ul class="navbar-nav h-100">
+      <li class="nav-item  li_monitor">
+        <a class="nav-link" id="111" href="{{ url_for('monitor1') }}">即時監控</a>
+      </li>
+      <li class="nav-item li_monitor">
+        <a class="nav-link" id="222" href="{{ url_for('image') }}">Detail預測</a>
+      </li>
+      <li class="nav-item  li_monitor">
+        <a class="nav-link" href="{{ url_for('fix') }}">維修回報</a>
+      </li>
+      <li class="nav-item active li_monitor">
+        <a class="nav-link active" href="{{ url_for('information') }}">預測資訊</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+  </header>
+<main class="inf">
+    <div class="up">
+        <div class="title"><h5>預測資訊回報</h5></div>
+        <div class="mid"><h5 class="h1">時間</h5><h5 class="h2">項目內容</h5></div>
+        <div class="main">
+            <div class="d1"><p class="p1">{{error_lst[0]['time']}} {{error_lst[0]['hour']}}</p><p class="p2">Detail {{err1}} 不合格</p></div>
+            <hr>
+            <div class="d1"><p class="p1">{{error_lst[1]['time']}} {{error_lst[1]['hour']}}</p><p class="p2">Detail {{err2}} 不合格</p></div>
+            <hr>
+            <div class="d1"><p class="p1">{{error_lst[2]['time']}} {{error_lst[2]['hour']}}</p><p class="p2">Detail {{err3}} 不合格</p></div>
+            <hr>
+            <div class="d1"><p class="p1">{{error_lst[3]['time']}} {{error_lst[3]['hour']}}</p><p class="p2">Detail {{err4}} 不合格</p></div>
+            
+        </div>
+    </div>
+</main>
+<footer class="inf">
+<div class="container">
+    <div class="title">
+        <h5>預測次數統計圖</h5>
+    </div>
+    <div class="img">
+        <img src="{{ url_for('static', filename='image/statics.png') }}" alt="">
+    </div>
+    </div>
+
+</footer>
+
+
+{% endblock %}

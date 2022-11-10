@@ -1,0 +1,34 @@
+main.hp1 select.form-select {
+  margin-left: 40vw;
+  margin-top: 5rem;
+  width: 20vw;
+  height: 4rem;
+  font-size: 4vmin;
+  border-style: solid;
+  border-color: black;
+  border-radius: 0%;
+}
+main.hp1 hr.hr1 {
+  margin-left: 25%;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0);
+}
+main.hp1 div.hp1_container {
+  min-height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  font-size: 5vmin;
+}
+main.hp1 div.hp1_container a {
+  margin: 5%;
+}
+main.hp1 div.hp1_container div.col1, main.hp1 div.hp1_container div.col2 {
+  background-color: #F6B8B8;
+  min-height: 40vh;
+  min-width: 100%;
+  text-align: center;
+  line-height: 35vh;
+  float: left;
+  margin-top: 10vh;
+}/*# sourceMappingURL=hp1.css.map */

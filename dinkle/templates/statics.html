@@ -1,0 +1,124 @@
+{% extends 'base.html' %} 
+{% block css %}
+<link
+type="text/css"
+rel="stylesheet"
+href="{{ url_for('static', filename='styles/statics.css') }}"
+ /> 
+{% endblock %}
+{% block content %}
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-lg  n1">
+      <a class="navbar-brand text-white navword a1" href="https://www.dinkle.com/tw/">
+          <img src="{{ url_for('static', filename='image/icon.png') }}" class="d-inline-block " alt="">
+          Delight Through Connections
+        </a>
+        <div class="text-center navbar-center d1">
+          <h1 class="text-white navbar-collapse-center navbar-center">智慧品質預測管理系統</h1>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end d2">
+          <a class="navright nav-link  text-white a2" href="https://www.dinkle.com/tw/">
+      <img src="{{ url_for('static', filename='image/Vector.png') }}" class="d-inline-block " alt="">
+      登出
+    </a>
+        </div>
+    </nav>
+    <nav class="nav-monitor navbar navbar-expand-lg  n2">
+      <a class="navbar-brand" href="{{ url_for('hp1') }}">
+        <img src="{{ url_for('static', filename='image/Home.png') }}" class="d-inline-block " alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse font-monitor" id="navbarNav">
+        <ul class="navbar-nav h-100">
+          <li class="nav-item active li_monitor">
+            <a class="nav-link" id="111" href="{{ url_for('statics') }}">次數統計</a>
+          </li>
+
+        </ul>
+      </div>
+      </nav>
+</header>
+<main class="statics ">
+  <div class="container">
+  <div class="col colc">
+    <div class="up row ">
+        <div class="title">良品率統計</div>
+        <div class="row">
+            <div class="col col1">
+              <img src="{{ url_for('static', filename='image/sta_donut.png') }}" alt="">
+            </div>
+            <div class="col col2">
+              <img src="{{ url_for('static', filename='image/his_donut.png') }}" alt="">
+            </div>
+        </div>
+    </div>
+    <hr class="h1 row">
+    <div class="mid row">
+      <div class="title">不良品次數統計</div>
+      <div class="img">
+        <img src="{{ url_for('static', filename='image/sta_abar.png') }}" alt="">
+      </div>
+    </div>
+    <hr class="h2 row">
+    <div class="down row">
+      <div class="title">預測規格不良次數統計</div>
+      <div class="row">
+        <div class="left col"><img src="{{ url_for('static', filename='image/sta_bar.png') }}" alt=""></div>
+        <div class="right col">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">統計量</th>
+                <th scope="col">數值</th>
+                <th scope="col">對應Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>上界最高次數</td>
+                <td>{{maxup['max']}}</td>
+                <td>{{maxup['detail']}}</td>
+              </tr>
+              <tr>
+                <td>下界最高次數</td>
+                <td>{{maxdown['max']}}</td>
+                <td>{{maxdown['detail']}}</td>
+              </tr>
+              <tr>
+                <td>總最高次數</td>
+                <td>{{maxall['max']}}</td>
+                <td>{{maxall['detail']}}</td>
+              </tr>
+              <tr>
+                <td>總最低次數</td>
+                <td>{{minall['max']}}</td>
+                <td>{{minall['detail']}}</td>
+              </tr>
+              <tr>
+                <td>總平均次數</td>
+                <td>{{averange['aver']}}</td>
+                <td>{{averange['detail']}}</td>
+              </tr>
+              <tr>
+                <td>中位數</td>
+                <td>{{midd['mid']}}</td>
+                <td>{{midd['detail']}}</td>
+              </tr>
+              <tr>
+                <td>離群值</td>
+                <td>{{outer['mid']}}</td>
+                <td>{{outer['detail']}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  </main>
+
+{% endblock %}
